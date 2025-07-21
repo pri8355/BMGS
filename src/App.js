@@ -1,24 +1,85 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Hero from './components/Hero';
+import LeanModelSection from './components/LeanModelSection';
+import About from './components/About';
+import ServicesPage from './components/ServicesPage';
+import LeanIntroSection from './components/LeanIntroSection';
+import Resourcepage from './components/Resourcepage';
+import Contact from './components/Contact';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Question from './components/Question';
+import SignInModal from './components/SignInModal';
+import AuthModalManager from './components/AuthModalManager';
+import React, { useState } from 'react';
+
+function Home({ onOpenAuthModal, onOpenSignIn }) {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <LeanModelSection />
+
+      <div id="about">
+        <About />
+      </div>
+      <div id="servicesPage">
+        <ServicesPage />
+      </div>
+      <div id="LeanIntroSection">
+        <LeanIntroSection />
+      </div>
+      <div id="Resourcepage">
+        <Resourcepage />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
+
+      {/* Sign in link */}
+      {/* <p className="switch-link" onClick={onOpenSignIn}>
+        Sign in
+      </p> */}
+
+      {/* This is your existing open button (optional now) */}
+      {/* <button onClick={onOpenAuthModal} className="open-auth-button">
+        Open Sign Up / Sign In
+      </button> */}
+    </>
+  );
+}
 
 function App() {
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [showSignInModal, setShowSignInModal] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+    {showAuthModal && (
+  <AuthModalManager
+    onClose={() => setShowAuthModal(false)}
+    onOpenSignIn={() => {
+      setShowAuthModal(false);
+      setShowSignInModal(true);
+    }}
+  />
+)}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                onOpenAuthModal={() => setShowAuthModal(true)}
+                onOpenSignIn={() => setShowSignInModal(true)}
+              />
+            }
+          />
+          <Route path="/question" element={<Question />} />
+        </Routes>
+      </>
+    </Router>
   );
 }
 
