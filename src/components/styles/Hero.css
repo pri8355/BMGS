@@ -16,10 +16,10 @@ h1.banner-head {
     font-family: 'Wittgenstein', sans-serif;
     color: #009688;
     font-weight: 800;
-    font-size: 35px;
+    font-size: 30px;
 }
 blockquote.banner-blockquote {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 800;
     font-family: "Lato", sans-serif;
     color: #009688;
@@ -30,14 +30,15 @@ p.banner-para strong {
     font-family: "Lato", sans-serif;
     font-weight: 800;
 }
+
 button.btn-book {
     background: #008080;
     border: 0;
-    width: 225px;
-    height: 65px;
+    width: 200px;
+    height: 59px;
     border-radius: 10px;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 16px;
     font-family: "Lato", sans-serif;
       transition: all 0.3s ease;
     font-weight: 700;
@@ -48,7 +49,7 @@ button.btn-book:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 p.banner-para {
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 600;
     font-family: "Lato", sans-serif;
     line-height: 41px;
@@ -126,11 +127,10 @@ button.btn-outline-secondary {
     background: transparent  !important;
 }
 p.lead {
-
-    font-size: 22px;
+    font-size: 18px;
     color: #000000;
     font-weight: 600;
-        margin-top: 36px;
+    margin-top: 10px;
     font-family: "Lato", sans-serif;
 }
 h1.display-4 {
@@ -192,9 +192,9 @@ h1.display-4 span {
     color: #008080;
     background: transparent;
     border: 3px solid #008080;
-    width: 225px;
-    height: 65px;
-    font-size: 20px;
+    width: 200px;
+    height: 59px;
+    font-size: 16px;
     font-family: "Lato", sans-serif;
     border-radius: 10px;
     font-weight: 800;

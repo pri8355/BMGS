@@ -7,27 +7,30 @@ h2.Learning-head {
     text-align: center;
 }
 
+
 .learning-box h5 {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 800;
     font-family: "Lato", sans-serif;
     color: #008080;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
+
 .learning-box p {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #000000;
     font-family: "Lato", sans-serif;
+    margin-bottom: 10px !important;
 }
 .get-btn {
     background: #008080;
     border: 0;
-    width: 225px;
-    height: 65px;
+    width: 170px;
+    height: 55px;
     border-radius: 10px;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 17px;
     font-family: "Lato", sans-serif;
     font-weight: 700;
 }
@@ -74,14 +77,20 @@ div#Resourcepage .get-btn {
 
 div#Resourcepage .container {
     max-width: 1420px;
+        padding: 0px 50px;
 }
+
 
 h2.Learning-head:before {
     position: absolute;
     content: '';
-    width: 235px;
+    width: 184px;
     background: #008080;
-    bottom: -20px;
-    left: 43%;
-    height: 5px;
+    bottom: -12px;
+    left: 44%;
+    height: 4px;
+}
+
+.learntext {
+    margin-top: 27px !important;
 }

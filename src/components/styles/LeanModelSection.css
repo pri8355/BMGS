@@ -3,34 +3,34 @@
 }
 .lean-model-section h2 span {
     color: #008080;
-    font-size: 35px;
+    font-size: 26px;
     font-weight: 800;
     font-family: "Lato", sans-serif;
 }
+
 .lean-model-section ul li {
-    display: flex
-;
+    display: flex;
     align-items: center;
     line-height: 28px;
-    font-size: 21px;
+    font-size: 15px;
     font-weight: 600;
     text-align: center;
     background: #ffffff;
     font-family: "Lato", sans-serif;
     margin: auto;
     padding: 16px;
-    width: 1028px;
+    width: 800px;
     border-radius: 10px;
 }
 p.BMGS-text {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     color: #000000;
     font-family: "Lato", sans-serif;
     margin-top: 35px;
 }
 h2.BMGS-head {
-    font-size: 35px;
+    font-size: 26px;
     font-weight: 800;
     color: #000000;
     font-family: "Lato", sans-serif;
@@ -41,12 +41,13 @@ h2.BMGS-head {
     height: 20px;
 }
 
+
 h2.BMGS-head:before {
     position: absolute;
     content: '';
     width: 185px;
     background: #008080;
     bottom: -15px;
-    left: 44%;
-    height: 5px;
+    left: 42%;
+    height: 4px;
 }

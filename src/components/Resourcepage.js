@@ -38,7 +38,7 @@ const handleResouceClick = () => {
     <div className="container py-5 ">
       <div className="p-4 rounded shadow-sm bg-white">
         <h2 className="Learning-head">🎓 Learning Resources</h2>
-        <p className="lead text-center">
+        <p className="lead text-center learntext">
           Your gateway to continuous learning and skill enhancement.
         </p>
 

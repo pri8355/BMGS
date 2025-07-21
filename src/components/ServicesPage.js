@@ -68,7 +68,7 @@ const services = [
 
 const ServicesPage = () => {
   return (
-    <section className="services-page-section py-5 bg-light">
+    <section className="services-page-section py-3 bg-light">
       <div className="container position-relative">
         <h2 className="text-center mb-5 service-heading">Our Services</h2>
 
