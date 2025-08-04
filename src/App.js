@@ -13,14 +13,14 @@ import Question from './components/Question';
 import SignInModal from './components/SignInModal';
 import AuthModalManager from './components/AuthModalManager';
 import React, { useState } from 'react';
-
+import Dashboard from './components/Dashboard';
 function Home({ onOpenAuthModal, onOpenSignIn }) {
   return (
     <>
       <Header />
       <Hero />
       <LeanModelSection />
-
+        {/* <Dashboard /> */}
       <div id="about">
         <About />
       </div>
@@ -77,6 +77,7 @@ function App() {
             }
           />
           <Route path="/question" element={<Question />} />
+           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </>
     </Router>

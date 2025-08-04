@@ -6,7 +6,7 @@ const SignInModal = ({ onClose }) => {
   const navigate = useNavigate();
   
   const handleSignUpClick = () => {
-    navigate('/question');
+    navigate('/dashboard');
 };
   return (
     <div className="modal-overlay" onClick={onClose}>
