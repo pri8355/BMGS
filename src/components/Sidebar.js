@@ -13,8 +13,7 @@ const Sidebar = ({ isCollapsed }) => {
 
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : 'expanded'}`}>
-      {/* Always show BGMS text */}
-      {/* <h2 className={`logo ${isCollapsed ? 'small-logo' : ''}`}>BGMS</h2> */}
+
 
       <ul className="menu-list">
         <li>
