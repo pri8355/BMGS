@@ -23,16 +23,7 @@ const Header = ({ toggleSidebar }) => {
       </div>
 
       <div className="right-section">
-        {/* Search bar always visible */}
-        {/* <div className="search-bar-wrapper">
-          <input
-            type="text"
-            className="search-bars"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-        </div> */}
+    
 
         {/* User Icon and Popup */}
         <div className="user-icon-wrapper">
