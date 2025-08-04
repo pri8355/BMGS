@@ -18,13 +18,13 @@ const Header = ({ toggleSidebar }) => {
   return (
     <div className="headers">
       <div className="left-section">
-        {/* <h3>Welcome Admin</h3> */}
+        <h3>BGMS</h3>
         <FaBars className="icon menu-icon" onClick={toggleSidebar} />
       </div>
 
       <div className="right-section">
         {/* Search bar always visible */}
-        <div className="search-bar-wrapper">
+        {/* <div className="search-bar-wrapper">
           <input
             type="text"
             className="search-bars"
@@ -32,7 +32,7 @@ const Header = ({ toggleSidebar }) => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-        </div>
+        </div> */}
 
         {/* User Icon and Popup */}
         <div className="user-icon-wrapper">

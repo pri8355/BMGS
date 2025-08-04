@@ -150,10 +150,11 @@ svg.icon.menu-icon {
   z-index: 100;
 } */
 
+
 .left-section {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 139px;
 }
 .sidebar.closed {
   transform: translateX(-100%);
