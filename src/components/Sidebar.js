@@ -1,48 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   FaTachometerAlt,
   FaUsers,
   FaQuestionCircle,
-  FaPlus,
-  FaEye
 } from 'react-icons/fa';
 import './styles/Dashboard.css';
 
 const Sidebar = ({ isCollapsed }) => {
-  const [showQuestionSubmenu, setShowQuestionSubmenu] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <div className={`sidebar ${isCollapsed ? 'collapsed' : 'expanded'}`}>
-
-
       <ul className="menu-list">
-        <li>
+        <li
+          className={`menu-link${isActive('/dashboard') ? ' active' : ''}`}
+          onClick={() => navigate('/dashboard')}
+          style={{ cursor: 'pointer' }}
+        >
           <FaTachometerAlt />
           {!isCollapsed && <span>Dashboard</span>}
         </li>
-        <li>
-          <FaUsers />
-          {!isCollapsed && <span>Users</span>}
-        </li>
+<li
+  className={`menu-link${isActive('/users') ? ' active' : ''}`}
+  onClick={() => navigate('/users')}
+  style={{ cursor: 'pointer' }}
+>
+  <FaUsers />
+  {!isCollapsed && <span>Users</span>}
+</li>
 
         <li
-          onClick={() => setShowQuestionSubmenu(!showQuestionSubmenu)}
+          className={`menu-link${isActive('/questions') ? ' active' : ''}`}
+          onClick={() => navigate('/questions')}
           style={{ cursor: 'pointer' }}
         >
           <FaQuestionCircle />
-          {!isCollapsed && <span>Question</span>}
+          {!isCollapsed && <span>Questions</span>}
         </li>
-
-        {!isCollapsed && showQuestionSubmenu && (
-          <ul className="submenu">
-            <li>
-              <FaPlus /> <span>Add Question</span>
-            </li>
-            <li>
-              <FaEye /> <span>View Question</span>
-            </li>
-          </ul>
-        )}
       </ul>
     </div>
   );

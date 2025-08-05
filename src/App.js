@@ -14,6 +14,8 @@ import SignInModal from './components/SignInModal';
 import AuthModalManager from './components/AuthModalManager';
 import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
+import AddUserPage from './components/AddUserPage'; 
+import ViewUsersPage from './components/ViewUsersPage';
 function Home({ onOpenAuthModal, onOpenSignIn }) {
   return (
     <>
@@ -78,6 +80,8 @@ function App() {
           />
           <Route path="/question" element={<Question />} />
            <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/AddUserPage" element={<AddUserPage />} />
+          <Route path="/users" element={<ViewUsersPage />} />
         </Routes>
       </>
     </Router>
