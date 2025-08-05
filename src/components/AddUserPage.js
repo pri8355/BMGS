@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import Header from './Headerbs';
 import './styles/AddUserPage.css';
 import { FaArrowLeft } from 'react-icons/fa';
-import './styles/Dashboard.css'; // For sidebar + header layout
+import './styles/Dashboard.css'; 
 
 const AddUserPage = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
