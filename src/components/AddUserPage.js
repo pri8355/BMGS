@@ -34,14 +34,14 @@ const AddUserPage = () => {
                 <label>Email Address</label>
                 <input type="email" placeholder="Enter email" />
               </div>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <label>Registered At</label>
                 <input type="date" />
-              </div>
-              <div className="form-group">
+              </div> */}
+              {/* <div className="form-group">
                 <label>Last Login</label>
                 <input type="date" />
-              </div>
+              </div> */}
               <div className="form-group">
                 <button type="submit" className="submit-btn">Create User</button>
               </div>

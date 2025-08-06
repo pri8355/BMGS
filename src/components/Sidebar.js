@@ -3,8 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import {
   FaTachometerAlt,
   FaUsers,
-  FaQuestionCircle,
-} from 'react-icons/fa';
+  FaQuestionCircle, FaListAlt } from 'react-icons/fa';
 import './styles/Dashboard.css';
 
 const Sidebar = ({ isCollapsed }) => {
@@ -32,6 +31,14 @@ const Sidebar = ({ isCollapsed }) => {
   <FaUsers />
   {!isCollapsed && <span>Users</span>}
 </li>
+ <li
+          className={`menu-link${isActive('/category') ? ' active' : ''}`}
+          onClick={() => navigate('/category')}
+          style={{ cursor: 'pointer' }}
+        >
+          <FaListAlt />
+          {!isCollapsed && <span>Category</span>}
+        </li>
 
         <li
           className={`menu-link${isActive('/questions') ? ' active' : ''}`}

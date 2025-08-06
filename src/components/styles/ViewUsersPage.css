@@ -285,7 +285,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .cancel-btn {
@@ -335,4 +335,9 @@ h2 {
   font-size: 15px;
   background-color: #f9f9f9;
   color: #333;
+}
+
+p.delete-par {
+    text-align: left;
+    font-size: 15px;
 }

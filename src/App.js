@@ -16,6 +16,8 @@ import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import AddUserPage from './components/AddUserPage'; 
 import ViewUsersPage from './components/ViewUsersPage';
+import CategoryPage from './components/CategoryPage';
+
 function Home({ onOpenAuthModal, onOpenSignIn }) {
   return (
     <>
@@ -82,6 +84,8 @@ function App() {
            <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/AddUserPage" element={<AddUserPage />} />
           <Route path="/users" element={<ViewUsersPage />} />
+             <Route path="/category" element={<CategoryPage />} />
+     
         </Routes>
       </>
     </Router>

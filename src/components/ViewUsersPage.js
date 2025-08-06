@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { AiOutlineDelete } from "react-icons/ai";
 import Header from './Headerbs';
-import { FaPlus, FaEye } from 'react-icons/fa';
+import { FaPlus, FaEye, FaEdit} from 'react-icons/fa';
 
 const ViewUsersPage = () => {
   const navigate = useNavigate();
@@ -21,6 +21,8 @@ const ViewUsersPage = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [userToDelete, setUserToDelete] = useState(null);
+  const [showEditModal, setShowEditModal] = useState(false);
+const [userToEdit, setUserToEdit] = useState(null);
 
   const handleViewClick = (user) => {
     setSelectedUser(user);
@@ -38,6 +40,10 @@ const ViewUsersPage = () => {
     setUserToDelete(null);
   };
 
+const handleEditClick = (user) => {
+  setUserToEdit(user);
+  setShowEditModal(true);
+};
   return (
     <div className="dashboard-wrapper">
       <Header />
@@ -74,6 +80,7 @@ const ViewUsersPage = () => {
                     <td>
                       <button className="action-icon view" onClick={() => handleViewClick(user)}><FaEye /></button>
                       <button className="action-icon delete" onClick={() => handleDeleteClick(user)}><AiOutlineDelete /></button>
+                       <button className="action-icon edit" onClick={() => handleEditClick(user)}><FaEdit /></button>
                     </td>
                   </tr>
                 ))}
@@ -124,7 +131,7 @@ const ViewUsersPage = () => {
         <div className="modal-overlay">
           <div className="modal-box">
             <h3>Confirm Delete</h3>
-            <p>Are you sure you want to delete <strong>{userToDelete.fullName}</strong>?</p>
+            <p className="delete-par">Are you sure you want to delete <strong>{userToDelete.fullName}</strong>?</p>
             <div className="modal-buttons">
               <button className="cancel-btn" onClick={() => setShowDeleteModal(false)}>Cancel</button>
               <button className="confirm-btn"onClick={() => setShowDeleteModal(false)}>Delete</button>
@@ -132,6 +139,56 @@ const ViewUsersPage = () => {
           </div>
         </div>
       )}
+
+      {showEditModal && userToEdit && (
+  <div className="modal-overlay">
+    <div className="modal-box">
+      <h3>Edit User</h3>
+      <form className="edit-user-form">
+        <div className="form-group">
+          <label>Full Name</label>
+          <input
+            type="text"
+            value={userToEdit.fullName}
+            onChange={(e) =>
+              setUserToEdit({ ...userToEdit, fullName: e.target.value })
+            }
+          />
+        </div>
+        <div className="form-group">
+          <label>Email Address</label>
+          <input
+            type="email"
+            value={userToEdit.email}
+            onChange={(e) =>
+              setUserToEdit({ ...userToEdit, email: e.target.value })
+            }
+          />
+        </div>
+        <div className="modal-buttons">
+          <button
+            className="submit-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowEditModal(false); // dummy update
+            }}
+          >
+            Update
+          </button>
+          <button
+            className="cancel-btn"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowEditModal(false);
+            }}
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
     </div>
   );
 };
