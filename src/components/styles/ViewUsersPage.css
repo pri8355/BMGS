@@ -51,6 +51,10 @@
   transition: color 0.3s;
 }
 
+
+.submit-btn {
+    height: 40px  !important;
+}
 button.editbtn{
   color: #007bff;
 }
@@ -156,12 +160,14 @@ h2 {
   padding: 20px 0;
 }
 
+
 .user-details-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 75px;
 }
 
 .user-details-header {
@@ -288,12 +294,16 @@ h2 {
   /* margin-top: 20px; */
 }
 
+button.action-icon.edit {
+    color: #1b78ee;
+}
 .cancel-btn {
   background-color: #ccc;
   padding: 8px 14px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+      height: 40px !important;
 }
 
 .confirm-btn {
@@ -303,6 +313,7 @@ h2 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  /* line-height: 0; */
 }
 .modal-box.wide {
   width: 500px;

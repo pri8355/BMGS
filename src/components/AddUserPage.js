@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Headerbs';
 import './styles/AddUserPage.css';
+import './styles/Dashboard.css'; // for shared layout styles
 import { FaArrowLeft } from 'react-icons/fa';
-import './styles/Dashboard.css'; 
 
 const AddUserPage = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -15,14 +15,22 @@ const AddUserPage = () => {
 
   return (
     <div className="dashboard-container">
+      {/* Sidebar */}
       <Sidebar isCollapsed={isCollapsed} />
-      <div className="main-content">
+
+      {/* Main content area */}
+      <div className={`main-content ${isCollapsed ? 'collapsed' : ''}`}>
+        {/* Header */}
         <Header toggleSidebar={toggleSidebar} />
 
+        {/* Page content */}
         <div className="add-user-wrapper">
           <div className="add-user-card">
             <h2 className="form-title">
-              <FaArrowLeft className="back-icon" onClick={() => window.history.back()} />
+              <FaArrowLeft
+                className="back-icon"
+                onClick={() => window.history.back()}
+              />
               Add New User
             </h2>
             <form className="add-user-form">
@@ -34,16 +42,10 @@ const AddUserPage = () => {
                 <label>Email Address</label>
                 <input type="email" placeholder="Enter email" />
               </div>
-              {/* <div className="form-group">
-                <label>Registered At</label>
-                <input type="date" />
-              </div> */}
-              {/* <div className="form-group">
-                <label>Last Login</label>
-                <input type="date" />
-              </div> */}
               <div className="form-group">
-                <button type="submit" className="submit-btn">Create User</button>
+                <button type="submit" className="submit-btn">
+                  Create User
+                </button>
               </div>
             </form>
           </div>
