@@ -10,14 +10,16 @@ import Resourcepage from './components/Resourcepage';
 import Contact from './components/Contact';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Question from './components/Question';
-import SignInModal from './components/SignInModal';
 import AuthModalManager from './components/AuthModalManager';
 import React, { useState } from 'react';
 import Dashboard from './components/Dashboard';
 import AddUserPage from './components/AddUserPage'; 
 import ViewUsersPage from './components/ViewUsersPage';
 import CategoryPage from './components/CategoryPage';
-
+import QuestionPage from './components/QuestionPage'; 
+import AddQuestionPage from './components/AddQuestionPage'
+import EditQuestionPage from './components/EditQuestionPage';
+import ViewQuestionPage from './components/ViewQuestionPage';
 function Home({ onOpenAuthModal, onOpenSignIn }) {
   return (
     <>
@@ -84,8 +86,11 @@ function App() {
            <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/AddUserPage" element={<AddUserPage />} />
           <Route path="/users" element={<ViewUsersPage />} />
-             <Route path="/category" element={<CategoryPage />} />
-     
+          <Route path="/category" element={<CategoryPage />} />
+          <Route path="/questions" element={<QuestionPage />} />
+           <Route path="/add-question" element={<AddQuestionPage />} />
+          <Route path="/edit-question/:index" element={<EditQuestionPage />} />
+          <Route path="/view-question/:index" element={<ViewQuestionPage />} />
         </Routes>
       </>
     </Router>

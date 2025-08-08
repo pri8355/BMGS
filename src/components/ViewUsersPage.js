@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles/ViewUsersPage.css';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import { MdEdit } from "react-icons/md";
 import { AiOutlineDelete } from "react-icons/ai";
 import Header from './Headerbs';
 import { FaPlus, FaEye, FaEdit} from 'react-icons/fa';
@@ -80,7 +81,7 @@ const handleEditClick = (user) => {
                     <td>
                       <button className="action-icon view" onClick={() => handleViewClick(user)}><FaEye /></button>
                       <button className="action-icon delete" onClick={() => handleDeleteClick(user)}><AiOutlineDelete /></button>
-                       <button className="action-icon edit" onClick={() => handleEditClick(user)}><FaEdit /></button>
+                       <button className="action-icon edit" onClick={() => handleEditClick(user)}><MdEdit /></button>
                     </td>
                   </tr>
                 ))}
@@ -98,8 +99,14 @@ const handleEditClick = (user) => {
 
       {/* View Modal */}
      {showViewModal && selectedUser && (
-  <div className="modal-overlay">
-    <div className="modal-box view-form-box">
+  <div
+    className="modal-overlay"
+    onClick={() => setShowViewModal(false)} // backdrop click close
+  >
+    <div
+      className="modal-box view-form-box"
+      onClick={(e) => e.stopPropagation()} // andar click ignore
+    >
       <h3>User Information</h3>
       <form className="view-user-form">
         <div className="form-group">
@@ -119,7 +126,13 @@ const handleEditClick = (user) => {
           <input type="text" value={selectedUser.lastLogin} readOnly />
         </div>
         <div className="modal-buttons">
-          <button type="button" className="confirm-btn" onClick={() => setShowViewModal(false)}>Close</button>
+          <button
+            type="button"
+            className="confirm-btn"
+            onClick={() => setShowViewModal(false)}
+          >
+            Close
+          </button>
         </div>
       </form>
     </div>
@@ -128,21 +141,47 @@ const handleEditClick = (user) => {
 
       {/* Delete Modal */}
       {showDeleteModal && userToDelete && (
-        <div className="modal-overlay">
-          <div className="modal-box">
-            <h3>Confirm Delete</h3>
-            <p className="delete-par">Are you sure you want to delete <strong>{userToDelete.fullName}</strong>?</p>
-            <div className="modal-buttons">
-              <button className="cancel-btn" onClick={() => setShowDeleteModal(false)}>Cancel</button>
-              <button className="confirm-btn"onClick={() => setShowDeleteModal(false)}>Delete</button>
-            </div>
-          </div>
-        </div>
-      )}
+         <div
+    className="modal-overlay"
+    onClick={() => setShowDeleteModal(false)}
+  >
+    <div
+      className="modal-box"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <h3>Confirm Delete</h3>
+      <p className="delete-par">
+        Are you sure you want to delete <strong>{userToDelete.fullName}</strong>?
+      </p>
+      <div className="modal-buttons">
+        <button
+          className="confirm-btn"
+          onClick={() => setShowDeleteModal(false)}
+        >
+          Delete
+        </button>
+             <button
+          className="cancel-btn"
+          onClick={() => setShowDeleteModal(false)}
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+
 
       {showEditModal && userToEdit && (
-  <div className="modal-overlay">
-    <div className="modal-box">
+  <div
+    className="modal-overlay"
+    onClick={() => setShowEditModal(false)}
+  >
+    <div
+      className="modal-box"
+      onClick={(e) => e.stopPropagation()}
+    >
       <h3>Edit User</h3>
       <form className="edit-user-form">
         <div className="form-group">
@@ -170,7 +209,7 @@ const handleEditClick = (user) => {
             className="submit-btn"
             onClick={(e) => {
               e.preventDefault();
-              setShowEditModal(false); // dummy update
+              setShowEditModal(false);
             }}
           >
             Update
